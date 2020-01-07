@@ -76,6 +76,6 @@ public class EmailService {
         calendar.setTime(new Date());
         calendar.add(Calendar.DATE, 1);
         Date tomorrow = calendar.getTime();
-        return tomorrow.compareTo(notification.getDate()) > -1;
+        return notification.isActive() && tomorrow.compareTo(notification.getDate()) > -1;
     }
 }
